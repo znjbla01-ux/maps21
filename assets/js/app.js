@@ -9,11 +9,22 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const umkmMarkerBounds = [];
 const umkmData = Array.isArray(window.umkmData) ? window.umkmData : [];
 
+const escapeHtml = (value) =>
+    String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
 umkmData.forEach((item) => {
+    const nama = escapeHtml(item.nama);
+    const kategori = escapeHtml(item.kategori);
+    const alamat = escapeHtml(item.alamat);
+    const deskripsi = escapeHtml(item.deskripsi);
+
     const marker = L.marker([item.lat, item.lng]).addTo(map);
-    marker.bindPopup(
-        `<strong>${item.nama}</strong><br>${item.kategori}<br>${item.alamat}<br><em>${item.deskripsi}</em>`
-    );
+    marker.bindPopup(`<strong>${nama}</strong><br>${kategori}<br>${alamat}<br><em>${deskripsi}</em>`);
     umkmMarkerBounds.push([item.lat, item.lng]);
 });
 
