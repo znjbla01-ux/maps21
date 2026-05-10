@@ -133,7 +133,7 @@ $umkmData = [
         </section>
 
         <section class="section container" id="peta">
-            <h2>Peta GIS Penempatan UMKM</h2>
+            <h2>Peta GIS Sebaran UMKM</h2>
             <p class="map-caption">Klik marker pada peta untuk melihat detail UMKM.</p>
             <div id="map"></div>
         </section>
