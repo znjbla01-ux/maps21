@@ -68,7 +68,7 @@ $umkmData = [
                 <li><a href="#umkm">UMKM</a></li>
                 <li><a href="#peta">Peta GIS</a></li>
             </ul>
-            <a class="btn btn-light" href="#umkm">Masuk</a>
+            <a class="btn btn-light" href="#umkm">Lihat UMKM</a>
         </nav>
 
         <section class="hero-content container" id="beranda">

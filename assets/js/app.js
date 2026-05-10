@@ -6,16 +6,16 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
 }).addTo(map);
 
-const bounds = [];
+const umkmCoordinates = [];
 
 window.umkmData.forEach((item) => {
     const marker = L.marker([item.lat, item.lng]).addTo(map);
     marker.bindPopup(
         `<strong>${item.nama}</strong><br>${item.kategori}<br>${item.alamat}<br><em>${item.deskripsi}</em>`
     );
-    bounds.push([item.lat, item.lng]);
+    umkmCoordinates.push([item.lat, item.lng]);
 });
 
-if (bounds.length > 0) {
-    map.fitBounds(bounds, { padding: [40, 40] });
+if (umkmCoordinates.length > 0) {
+    map.fitBounds(umkmCoordinates, { padding: [40, 40] });
 }
