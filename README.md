@@ -1,6 +1,6 @@
 # maps21
 
-Website direktori GIS untuk penempatan UMKM di Desa Jumantono menggunakan PHP.
+Website direktori GIS untuk pemetaan UMKM di Desa Jumantono menggunakan PHP.
 
 ## Menjalankan di lokal
 

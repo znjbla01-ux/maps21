@@ -7,8 +7,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const umkmMarkerBounds = [];
+const umkmData = Array.isArray(window.umkmData) ? window.umkmData : [];
 
-window.umkmData.forEach((item) => {
+umkmData.forEach((item) => {
     const marker = L.marker([item.lat, item.lng]).addTo(map);
     marker.bindPopup(
         `<strong>${item.nama}</strong><br>${item.kategori}<br>${item.alamat}<br><em>${item.deskripsi}</em>`
