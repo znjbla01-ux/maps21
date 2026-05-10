@@ -1,0 +1,21 @@
+const mapCenter = [-7.5869, 110.9495];
+const map = L.map('map').setView(mapCenter, 14);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors',
+}).addTo(map);
+
+const bounds = [];
+
+window.umkmData.forEach((item) => {
+    const marker = L.marker([item.lat, item.lng]).addTo(map);
+    marker.bindPopup(
+        `<strong>${item.nama}</strong><br>${item.kategori}<br>${item.alamat}<br><em>${item.deskripsi}</em>`
+    );
+    bounds.push([item.lat, item.lng]);
+});
+
+if (bounds.length > 0) {
+    map.fitBounds(bounds, { padding: [40, 40] });
+}
